@@ -69,3 +69,44 @@ If You Dont create a constructor copiler is going to provide the default constru
 1. Connstructor does not have any return type.
 1. Constructor is of same name as Class.
 2. Constructor must be public.
+
+Constructor is a method (function) that has no return type.
+
+### How to create constructor and use it to store value.
+
+```
+#include <bits/stdc++.h>
+using namespace std;
+
+class Employee
+{
+public:
+    string Name;
+    string Company;
+    int Age;
+
+    void introduceMySelf()
+    {
+        cout << "Name: " << Name << endl;
+        cout << "Company: " << Company << endl;
+        cout << "Age: " << Age << endl;
+    }
+
+    Employee(string name, string company, int age)
+    {
+        Name = name;
+        Company = company;
+        Age = age;
+    }
+};
+
+int main()
+{
+    Employee employee1 = Employee("ASHISH", "Google", 25);
+    employee1.introduceMySelf();
+
+    Employee employee2 = Employee("Saldina", "Youtube", 35);
+    employee2.introduceMySelf();
+}
+
+```
