@@ -1,7 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Employee
+class AbstractEmployee{
+    virtual void askForPromotion () =0;
+};
+
+class Employee:AbstractEmployee
 {
 
 private:
@@ -51,18 +55,22 @@ public:
         Company = company;
         Age = age;
     }
+     void askForPromotion (){
+        if(Age>30) cout<<Name<<" got promoted"<<endl;
+      else 
+        cout<<Name<<" sorry you are not promoted"<<endl;
+
+     }
 };
 
 int main()
 {
     Employee employee1 = Employee("ASHISH", "Google", 25);
-    employee1.introduceMySelf();
 
     Employee employee2 = Employee("Saldina", "Youtube", 35);
-    employee2.introduceMySelf();
+    
+    employee1.askForPromotion();
+    employee2.askForPromotion();
 
-    employee1.setName("ShahRukh");
-    employee1.setAge(43);
-
-    cout << employee1.getName() << " is " << employee1.getAge() << " years old";
 }
+ 
