@@ -9,9 +9,12 @@ class Employee:AbstractEmployee
 {
 
 private:
-    string Name;
     string Company;
     int Age;
+
+protected:
+    string Name;
+
 
 public:
     void setName(string name)
@@ -63,14 +66,22 @@ public:
      }
 };
 
+class Developer: Employee {
+    public:
+         string FavouriteProgramingLanguage;
+
+    Developer(string name, string company, int age, string favouriteProgramingLanguage):Employee(name , company, age) { 
+    FavouriteProgramingLanguage = favouriteProgramingLanguage;
+    }
+
+    void FixBug() {
+        cout<<Name << " fixed bug using " << FavouriteProgramingLanguage<< endl;
+    }
+};
 int main()
 {
-    Employee employee1 = Employee("ASHISH", "Google", 25);
 
-    Employee employee2 = Employee("Saldina", "Youtube", 35);
-    
-    employee1.askForPromotion();
-    employee2.askForPromotion();
-
+    Developer D = Developer("Ashish", "Google" , 23, "C++");
+    D.FixBug();
 }
  
